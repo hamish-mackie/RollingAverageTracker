@@ -20,7 +20,7 @@ TEST_F(RollingAverageTrackerTests, testAccuracy){
 }
 
 TEST_F(RollingAverageTrackerTests, testHugeNumber){
-    RollingAverageTracker<uint64_t> rat(999999999999999999);
+    RollingAverageTracker<uint64_t> rat(999999999999999);
     rat.add_node(5);
     rat.add_node(5);
     ASSERT_EQ(rat.get_average(), 5);

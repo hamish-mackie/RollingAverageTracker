@@ -1,10 +1,10 @@
 cmake_minimum_required(VERSION 3.22)
-project(AverageListTracker)
+project(RollingAverageTracker)
 
 set(CMAKE_CXX_STANDARD 20)
 
-add_library(AverageListTracker INTERFACE)
-target_include_directories(AverageListTracker INTERFACE ${CMAKE_CURRENT_SOURCE_DIR}/source)
+add_library(RollingAverageTracker INTERFACE)
+target_include_directories(RollingAverageTracker INTERFACE ${CMAKE_CURRENT_SOURCE_DIR}/source)
 
 include(FetchContent)
 FetchContent_Declare(
@@ -17,11 +17,11 @@ FetchContent_MakeAvailable(googletest)
 
 enable_testing()
 
-add_executable(AverageListTrackerTests tests/main_tests.cpp)
+add_executable(RollingAverageTrackerTests tests/main_tests.cpp)
 
-target_link_libraries(AverageListTrackerTests
-        PUBLIC AverageListTracker gtest_main
+target_link_libraries(RollingAverageTrackerTests
+        PUBLIC RollingAverageTracker gtest_main
 )
 
 include(GoogleTest)
-gtest_discover_tests(AverageListTrackerTests)
+gtest_discover_tests(RollingAverageTrackerTests)
