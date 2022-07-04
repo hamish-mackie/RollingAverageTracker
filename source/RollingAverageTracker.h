@@ -4,6 +4,7 @@
 #pragma once
 
 #include <list>
+#include <iostream>
 
 template<class T>
 class RollingAverageTracker {
